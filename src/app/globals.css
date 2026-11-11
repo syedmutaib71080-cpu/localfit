@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #FAF8F5;
+  --color-ivory: #FDFCF9;
+  --color-cream: #F5EFEB;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F9F7F2;
+  --color-surface-muted: #EFEBE1;
+  --color-border-subtle: #E8E5DD;
+  --color-border-strong: #D5D1C5;
+
+  --color-charcoal-950: #121413;
+  --color-charcoal-900: #1C1F1D;
+  --color-charcoal-800: #2C302D;
+  --color-charcoal-700: #3E4440;
+  --color-charcoal-600: #575E59;
+  --color-charcoal-500: #717A73;
+  --color-charcoal-400: #939D95;
+  --color-charcoal-300: #BBC2BC;
+  --color-charcoal-200: #D9DDD9;
+  --color-charcoal-100: #EAECE9;
+  --color-charcoal-50: #F4F6F4;
+
+  --color-sage-50: #F3F7F4;
+  --color-sage-100: #E2ECE4;
+  --color-sage-200: #C7DBD0;
+  --color-sage-300: #A3C3AF;
+  --color-sage-400: #7DA98C;
+  --color-sage-500: #568B66;
+  --color-sage-600: #437151;
+  --color-sage-700: #375A41;
+  --color-sage-800: #2E4835;
+  --color-sage-900: #263B2C;
+
+  --color-olive-50: #F7F8F2;
+  --color-olive-100: #EDF0DF;
+  --color-olive-200: #DBE0C1;
+  --color-olive-300: #C2CBA0;
+  --color-olive-400: #A5AF7D;
+  --color-olive-500: #88935D;
+  --color-olive-600: #6B7546;
+  --color-olive-700: #545B37;
+  --color-olive-800: #43492D;
+  --color-olive-900: #383D26;
+
+  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  color-scheme: light;
+  --background: #FAF8F5;
+  --foreground: #1C1F1D;
+  --surface: #FFFFFF;
+  --surface-cream: #F5EFEB;
+  --surface-subtle: #F9F7F2;
+  --border-subtle: #E8E5DD;
+  --primary-sage: #437151;
+  --primary-sage-hover: #375A41;
+  --accent-olive: #6B7546;
+}
+
+/* Light mode only enforcement */
+html {
+  color-scheme: light;
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #C7DBD0;
+  color: #1C1F1D;
+}
