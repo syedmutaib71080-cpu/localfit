@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:stage9-health-live": "npx tsx src/tests/test-stage9-health-live-integration.ts",
+    "test:stage9-health-http": "npx tsx src/tests/test-stage9-health-http-integration.ts",
+    "test:stage9-health-browser": "npx tsx src/tests/test-stage9-health-browser.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

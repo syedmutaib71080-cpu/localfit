@@ -37,6 +37,8 @@ export interface Database {
           fitness_goal: FitnessGoal | null;
           daily_calorie_goal: number | null;
           daily_protein_goal: number | null;
+          daily_water_goal_ml?: number | null;
+          daily_sleep_goal_minutes?: number | null;
           preferred_unit: PreferredUnit;
           onboarding_completed: boolean;
           created_at: string;
@@ -53,6 +55,8 @@ export interface Database {
           fitness_goal?: FitnessGoal | null;
           daily_calorie_goal?: number | null;
           daily_protein_goal?: number | null;
+          daily_water_goal_ml?: number | null;
+          daily_sleep_goal_minutes?: number | null;
           preferred_unit?: PreferredUnit;
           onboarding_completed?: boolean;
           created_at?: string;
@@ -69,6 +73,8 @@ export interface Database {
           fitness_goal?: FitnessGoal | null;
           daily_calorie_goal?: number | null;
           daily_protein_goal?: number | null;
+          daily_water_goal_ml?: number | null;
+          daily_sleep_goal_minutes?: number | null;
           preferred_unit?: PreferredUnit;
           onboarding_completed?: boolean;
           created_at?: string;
@@ -284,6 +290,105 @@ export interface Database {
           logged_at?: string;
           notes?: string | null;
           is_ai_estimate?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      weight_logs: {
+        Row: {
+          id: string;
+          user_id: string;
+          weight_kg: number;
+          logged_date: string;
+          notes: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          weight_kg: number;
+          logged_date: string;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          weight_kg?: number;
+          logged_date?: string;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      water_logs: {
+        Row: {
+          id: string;
+          user_id: string;
+          intake_date: string;
+          amount_ml: number;
+          notes: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          intake_date: string;
+          amount_ml: number;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          intake_date?: string;
+          amount_ml?: number;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      sleep_logs: {
+        Row: {
+          id: string;
+          user_id: string;
+          sleep_date: string;
+          duration_minutes: number;
+          bedtime: string | null;
+          wake_time: string | null;
+          sleep_quality: "poor" | "fair" | "good" | "excellent" | null;
+          notes: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          sleep_date: string;
+          duration_minutes: number;
+          bedtime?: string | null;
+          wake_time?: string | null;
+          sleep_quality?: "poor" | "fair" | "good" | "excellent" | null;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          sleep_date?: string;
+          duration_minutes?: number;
+          bedtime?: string | null;
+          wake_time?: string | null;
+          sleep_quality?: "poor" | "fair" | "good" | "excellent" | null;
+          notes?: string | null;
           created_at?: string;
           updated_at?: string;
         };
