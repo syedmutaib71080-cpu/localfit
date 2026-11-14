@@ -19,6 +19,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PageContainer } from "@/components/ui/page-container";
+import { NutritionAssistantCard, MealSuggestionsCard } from "@/components/nutrition";
 import {
   demoTodayNutrition,
   DEMO_DATA_TAG,
@@ -367,6 +368,12 @@ export default function NutritionPage() {
           </div>
         </div>
       </Card>
+
+      {/* PERSONALIZED MEAL SUGGESTIONS (STAGE 10.3) */}
+      <MealSuggestionsCard />
+
+      {/* AI NUTRITION ASSISTANT (STAGE 10.2) */}
+      <NutritionAssistantCard />
 
       {/* NUTRITION GOALS CONFIGURATION CARD */}
       <Card variant="cream" className="p-6 space-y-6">

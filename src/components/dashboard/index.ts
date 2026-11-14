@@ -5,3 +5,4 @@ export * from "./dashboard-goals-card";
 export * from "./dashboard-nutrition-summary";
 export * from "./dashboard-activity-summary";
 export * from "./dashboard-trend-charts";
+export * from "./daily-health-summary-card";

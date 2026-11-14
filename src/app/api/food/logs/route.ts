@@ -133,7 +133,8 @@ export async function POST(req: NextRequest) {
           fat_per_100g: dbFood.fat_per_100g,
           fibre_per_100g: dbFood.fibre_per_100g,
         };
-        foodName = dbFood.name;
+        // Preserve user-supplied food name if explicitly provided; otherwise use canonical name
+        foodName = input.food_name?.trim() ? input.food_name.trim() : dbFood.name;
         if (!servingName && dbFood.serving_name) {
           servingName = dbFood.serving_name;
         }
@@ -150,7 +151,8 @@ export async function POST(req: NextRequest) {
             fat_per_100g: staticFood.fat_per_100g,
             fibre_per_100g: staticFood.fibre_per_100g,
           };
-          foodName = staticFood.name;
+          // Preserve user-supplied food name if explicitly provided; otherwise use canonical name
+          foodName = input.food_name?.trim() ? input.food_name.trim() : staticFood.name;
           if (!servingName && staticFood.serving_name) {
             servingName = staticFood.serving_name;
           }

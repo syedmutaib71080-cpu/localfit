@@ -10,6 +10,7 @@ import {
   Compass,
   Loader2,
   LogIn,
+  Mic,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageContainer } from "@/components/ui/page-container";
@@ -22,6 +23,7 @@ import {
   EditFoodLogModal,
   ManualFoodModal,
   DeleteConfirmationDialog,
+  VoiceLogModal,
 } from "@/components/food";
 import {
   getTodayDateString,
@@ -62,6 +64,7 @@ export default function FoodTrackerPage() {
   const [selectedFoodForDetail, setSelectedFoodForDetail] = React.useState<FoodCatalogueItem | null>(null);
   const [editingLog, setEditingLog] = React.useState<FoodLogEntry | null>(null);
   const [isManualModalOpen, setIsManualModalOpen] = React.useState(false);
+  const [isVoiceModalOpen, setIsVoiceModalOpen] = React.useState(false);
   const [deletingLog, setDeletingLog] = React.useState<FoodLogEntry | null>(null);
   const [isDeleting, setIsDeleting] = React.useState(false);
 
@@ -308,6 +311,21 @@ export default function FoodTrackerPage() {
           </Button>
 
           <Button
+            type="button"
+            onClick={() => {
+              setActiveMealCategory("lunch");
+              setIsVoiceModalOpen(true);
+            }}
+            size="sm"
+            variant="secondary"
+            icon={<Mic size={14} className="text-[#375A41]" />}
+            iconPosition="left"
+            className="text-xs"
+          >
+            Voice Log
+          </Button>
+
+          <Button
             href="/app/food/scan"
             size="sm"
             variant="primary"
@@ -466,6 +484,18 @@ export default function FoodTrackerPage() {
         isDeleting={isDeleting}
         onCancel={() => setDeletingLog(null)}
         onConfirm={handleConfirmDelete}
+      />
+
+      {/* 6. Voice Food Logging Modal */}
+      <VoiceLogModal
+        isOpen={isVoiceModalOpen}
+        defaultDate={selectedDate}
+        defaultMealType={activeMealCategory}
+        onClose={() => setIsVoiceModalOpen(false)}
+        onSuccess={async (msg) => {
+          await reloadCurrentDate();
+          if (msg) showFeedback(msg);
+        }}
       />
     </PageContainer>
   );

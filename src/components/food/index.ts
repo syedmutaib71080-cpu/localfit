@@ -7,3 +7,4 @@ export * from "./meal-breakdown-card";
 export * from "./nutrition-dashboard-header";
 export * from "./date-navigation-bar";
 export * from "./delete-confirmation-dialog";
+export * from "./voice-log-modal";

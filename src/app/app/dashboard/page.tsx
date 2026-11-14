@@ -18,6 +18,7 @@ import {
   DashboardNutritionSummary,
   DashboardActivitySummary,
   DashboardTrendCharts,
+  DailyHealthSummaryCard,
 } from "@/components/dashboard";
 import { createClient } from "@/lib/supabase/client";
 import {
@@ -312,6 +313,9 @@ export default function DashboardPage() {
         </div>
       ) : (
         <>
+          {/* Daily Multi-Pillar Summary & Insights (Stage 10.4) */}
+          <DailyHealthSummaryCard selectedDate={selectedDate} />
+
           {/* 1. Primary Overview Metric Cards */}
           <DashboardOverviewCards
             totals={nutritionTotals}

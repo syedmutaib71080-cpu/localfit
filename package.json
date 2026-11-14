@@ -9,7 +9,16 @@
     "lint": "eslint",
     "test:stage9-health-live": "npx tsx src/tests/test-stage9-health-live-integration.ts",
     "test:stage9-health-http": "npx tsx src/tests/test-stage9-health-http-integration.ts",
-    "test:stage9-health-browser": "npx tsx src/tests/test-stage9-health-browser.ts"
+    "test:stage9-health-browser": "npx tsx src/tests/test-stage9-health-browser.ts",
+    "test:stage10-voice": "npx tsx src/tests/test-stage10-voice-logging.ts",
+    "test:stage10-voice:live": "npx tsx src/tests/test-stage10-voice-logging.ts --live",
+    "test:stage10-assistant": "npx tsx src/tests/test-stage10-nutrition-assistant.ts",
+    "test:stage10-assistant:live": "npx tsx src/tests/test-stage10-nutrition-assistant.ts --live",
+    "test:stage10-suggestions": "npx tsx src/tests/test-stage10-meal-suggestions.ts",
+    "test:stage10-suggestions:live": "npx tsx src/tests/test-stage10-meal-suggestions.ts --live",
+    "test:stage10-summary": "npx tsx src/tests/test-stage10-daily-summary.ts",
+    "test:stage10-summary:live": "npx tsx src/tests/test-stage10-daily-summary.ts --live",
+    "test:stage10-audit": "npx tsx src/tests/test-stage10-security-audit.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
